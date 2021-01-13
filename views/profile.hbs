@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжный магазин</title>
+
+    {{>links}}
+</head>
+<body>
+    {{>header}}
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row" class="min-h-60vh">
+            <h1>Профиль: {{session}}</h1>
+                <table class="table">
+                    <tr>
+                        <td>
+                            Имя
+                        </td>
+                        <td>
+                            {{first_name}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Фамилия
+                        </td>
+                        <td>
+                            {{last_name}}
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <button class="col-12 btn btn-dark" onclick="location.href='/logout'">Выйти</button>
+        </div>
+    </section>
+
+    {{>footer}}
+</body>
+</html>

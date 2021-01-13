@@ -1,0 +1,106 @@
+.min-h-20vh
+{
+    min-height: 20vh;
+}
+
+.min-h-30vh
+{
+    min-height: 30vh;
+}
+
+.min-h-40vh
+{
+    min-height: 40vh;
+}
+
+.min-h-50vh
+{
+    min-height: 50vh;
+}
+
+.min-h-60vh
+{
+    min-height: 60vh;
+}
+
+.min-h-70vh
+{
+    min-height: 70vh;
+}
+
+.min-h-80vh
+{
+    min-height: 80vh;
+}
+
+.min-h-90vh
+{
+    min-height: 90vh;
+}
+
+.min-h-100vh
+{
+    min-height: 100vh;
+}
+
+.book-block
+{
+    cursor: pointer;
+    transition: all .2s ease-in-out; 
+}
+
+.book-block:hover
+{
+    transform: scale(1.1);
+}
+.p-0 {
+    padding: 0;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon 
+{
+    height: 30px;
+    width: 30px;
+}
+a, p
+{
+    font-family: Marker Felt;
+    color: #823a6f;
+    cursor: pointer;
+    transition: all .2s ease-in-out; 
+}
+a, p:hover{
+    transform: scale(1.1);
+}
+h6{
+    color: #a99ac4;
+    font-family: Marker Felt;
+}
+button{
+    font-family: Marker Felt;
+    cursor: pointer;
+    transition: all .2s ease-in-out; 
+}
+button:hover {
+    transform: scale(1.1);
+}
+td, h1{
+    font-family: Marker Felt;
+}
+.table td, tr{
+    border-top: #a99ac4;
+}
+span {
+    font-family: Marker Felt;
+    font-size: 14pt;
+}
+.modal-header {
+    border-bottom: 1px solid #a99ac4;
+}
+#btnreg {
+    font-family: Marker Felt;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+#btnreg:hover {
+    transform: scale(1.1);
+}

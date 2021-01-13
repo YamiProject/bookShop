@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжный магазин</title>
+
+    {{>links}}
+</head>
+<body>
+    {{>header}}
+    <section class="py-5" style="background-color: #a99ac4;">
+        <div class="container">
+            <div class="row justify-content-center">            
+                <div class="col-lg-6 col-12 order-0 row justify-content-center">
+                    <img src="{{book.image}}" alt="" style="width:400px; height:600px">
+                </div>
+
+                <div class="col-lg-6 col-12 order-1">
+                    <h1 class="col-12">{{book.name}}</h1>
+                    <span class="col-12"><b>Автор: </b>{{book.author}}</span><br>
+                    <span class="col-12"><b>Жанр: </b>{{book.genre}}</span><br>
+                    <span class="col-12"><b>Издатель: </b>{{book.publisher}}</span><br>
+                    <span class="col-12"><b>Год издания: </b>{{book.publication_year}}</span><br>
+                    <span class="col-12"><b>Цена: </b> {{book.price}} <b>руб.</b> </span><br>
+
+                    {{#if ('isundefined' bought)}}
+                    <a href="{{book.full}}" download>Скачать Книгу</a>
+                    {{else}}
+                    <a href="{{book.fragment}}" download>Скачать фрагмент</a>
+
+                        {{#if ('isundefined' session)}}
+                        <button class="btn btn-warning my-6" id="buybook">Купить книгу</button>
+                        {{else}}
+                        <button data-toggle="modal" data-target="#loginmodal" class="btn btn-warning my-6 ">Купить книгу</button>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+
+            <div class="col-12 p-5">
+                <p class="col-12" style="color: black;"><b>Описание:</b><br>{{book.description}}</p>
+            </div>
+        </div>
+    </section>
+
+    {{>footer}}
+</body>
+</html>

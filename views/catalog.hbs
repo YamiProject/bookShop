@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжный магазин</title>
+
+    {{>links}}
+</head>
+<body>
+    {{>header}}
+
+    <section class="py-5" style="background-color: #a99ac4;">
+        <div class="container-fluid" style="background-color: #a99ac4;">
+            <div class="row min-h-80vh justify-content-center col-12">
+                <h1 class="display-2 text-center text-light col-12 pb-5 my-5" style="font-family: Marker Felt; text-shadow: 1px 1px 2px black;">Каталог</h1>
+
+                <div class="col-lg-2 mr-3 col-12 order-0 mb-4">
+                    <div>
+                        <table class="table table-border">
+                            <tr>
+                                <th class="text-center" style="font-family: Marker Felt; border-top: 1px solid #a99ac4" >Жанры</td>
+                            </tr>
+                        {{#each genrelist }}
+                            <tr>
+                                <td>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="bookgenre" value="{{genre}}">
+                                        <button onclick="this.form.submit()" class="btn btn-warning col-12" 
+                                        style="color: black;" id="{{genre}}">{{genre}}</button>
+                                    </form>
+                                </td>
+                            </tr> 
+                        {{/each}}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-12 order-1 row">
+                    {{#each books }}
+                        <div class="col-12 col-lg-6 mb-4 book-block" id="book{{id_book}}">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-6">
+                                    <img src="{{image}}" alt="" style="height: 300px; width: 200px;">
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="col-12 text-center py-2" style="font-family: Marker Felt;">{{name}}</h5>
+                                    <table class="table">
+                                        <tr>
+                                            <td>Автор:</td>
+                                            <td>{{author}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Жанр:</td>
+                                            <td>{{genre}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Цена:</td>
+                                            <td>{{price}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{>footer}}
+</body>
+</html>

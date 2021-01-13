@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжный магазин</title>
+
+    {{>links}}
+</head>
+<body>
+    {{>header}}
+
+    <section style="background-color: #291025;" class="py-5"> 
+        <div class="container-fluid p-0">
+            <div id="carouseExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/img/img-1.jpg" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/img-2.jpg" alt="" class="d-block w-100">
+                    </div>
+                     <div class="carousel-item">
+                        <img src="/img/img-3.jpg" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/img-4.jpg" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/img-5.jpg" alt="" class="d-block w-100">
+                    </div>
+                </div>
+                <a href="#carouselExampleIndicators" class="carousel-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Текст</span>
+                </a>
+                <a href="#carouselExampleIndicators" class="carousel-control-next" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Текст следующий</span>
+                </a>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #a99ac4;">
+        <div class="container-fluid">
+            <div class="row min-h-80vh align-items-center justify-content-center col-12">
+                <h1 class="display-4 text-center text-white col-12 mb-5 py-5" style="font-family: Marker Felt; text-shadow: 1px 1px 2px black;">Горячие новинки</h1>
+
+                {{#each books }}
+                    <div class="col-md-3 col-12 my-2 book-block min-h-80vh" id="book{{id_book}}">
+                        <div class="row align-items-center justify-content-center">
+                            <img src="{{image}}" alt=""  style="height: 400px; width: 260px;">
+                            <h2 class="col-12 text-center text-white pt-4" style="font-family: Marker Felt; text-shadow: 1px 1px 2px black;">{{name}}</h2>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    {{>footer}}
+</body>
+</html>

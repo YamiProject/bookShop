@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжный магазин</title>
+
+    {{>links}}
+</head>
+<body>
+    {{>header}}
+
+    <section class="py-5">
+        <div class="container-fluid" style="background-color: #a99ac4;">
+            <div class="row min-h-80vh justify-content-center col-12">
+                <h1 class="display-2 text-center text-dark col-12 pb-5 my-5">Купленные книги</h1>
+
+                <div class="col-12 order-1 row justify-content-center">
+                    {{#each books }}
+                        <div class="col-12 col-lg-4 mb-4 book-block" id="book{{id_book}}">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-6">
+                                    <img src="{{image}}" alt="" style="height: 300px; width: 200px;">
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="col-12 text-center" style="font-family: Marker Felt;">{{name}}</h5>
+                                    <table class="table">
+                                        <tr>
+                                            <td>Название</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Автора</td>
+                                            <td>{{author}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Жанр</td>
+                                            <td>{{genre}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Цена</td>
+                                            <td>{{price}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{>footer}}
+</body>
+</html>
